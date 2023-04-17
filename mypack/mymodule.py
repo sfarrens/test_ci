@@ -1,6 +1,6 @@
 """MyModule.
 
-This is my module.
+This is my module. Here is more info...
 
 """
 

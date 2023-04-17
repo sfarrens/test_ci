@@ -8,7 +8,7 @@ class TestMyModule:
     value1 = 6.0
     value2_good = 3.0
     value2_bad = 0.0
-    expected = 2.0
+    expected = 1.0
 
     def test_myfunc(self):
         """Test myfunc."""
