@@ -1,0 +1,65 @@
+[project]
+name = "mypack"
+requires-python = ">=3.7"
+authors = [
+    { "name" = "Samuel Farrens", "email" = "samuel.farrens@cea.fr"},
+]
+maintainers = [
+    { "name" = "Samuel Farrens", "email" = "samuel.farrens@cea.fr" },
+]
+description = 'Dummy example.'
+dependencies = [
+    "numpy>=1.19",
+]
+version = "0.0.0"
+
+[project.optional-dependencies]
+docs = [
+    "importlib_metadata",    
+    "myst-parser",
+    "numpydoc",
+    "sphinx",
+    "sphinxcontrib-bibtex",
+    "sphinxawesome-theme",
+    "sphinx-gallery",
+]
+lint = [
+    "black",
+]
+release = [
+    "build",
+    "twine",
+]
+test = [
+  "pytest",
+  "pytest-black",
+  "pytest-cases",
+  "pytest-cov",
+  "pytest-emoji",
+  "pytest-pydocstyle",
+  "pytest-raises",
+  "pytest-xdist",
+]
+
+# Install for development
+dev = ["mypack[docs,lint,release,test]"]
+
+[tool.black]
+line-length = 88
+
+[tool.pydocstyle]
+convention = "numpy"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--verbose",
+    "--black",
+    "--emoji",
+    "--pydocstyle",
+    "--cov=mypack",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "--junitxml=pytest.xml",
+]
+norecursedirs = ["tests/test_helpers"]
+testpaths = ["mypack"]
