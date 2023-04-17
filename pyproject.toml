@@ -61,5 +61,4 @@ addopts = [
     "--cov-report=xml",
     "--junitxml=pytest.xml",
 ]
-norecursedirs = ["tests/test_helpers"]
 testpaths = ["mypack"]
